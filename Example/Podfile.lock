@@ -1,0 +1,16 @@
+PODS:
+  - LMDropdownViewSwift (0.1.0)
+
+DEPENDENCIES:
+  - LMDropdownViewSwift (from `../`)
+
+EXTERNAL SOURCES:
+  LMDropdownViewSwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LMDropdownViewSwift: f8a5d8f8185f3722b5d0f47e2fe32851ef92b06f
+
+PODFILE CHECKSUM: 2b560cbc829061cfa0d2eb96e56779e4f13b6082
+
+COCOAPODS: 1.6.1

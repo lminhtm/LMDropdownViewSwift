@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LMDropdownViewSwift'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of LMDropdownViewSwift.'
+  s.version          = '1.0.0'
+  s.summary          = 'LMDropdownView is a simple dropdown view inspired by Tappy.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+LMDropdownView is a simple dropdown view inspired by Tappy.
                        DESC
 
   s.homepage         = 'https://github.com/LMinh/LMDropdownViewSwift'
@@ -26,8 +26,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'LMinh' => 'lminhtm@gmail.com' }
   s.source           = { :git => 'https://github.com/LMinh/LMDropdownViewSwift.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'LMDropdownViewSwift/Classes/**/*'
