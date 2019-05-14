@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LMDropdownViewSwift_Example' do
+  pod 'LMDropdownViewSwift', :path => '../'
+
+  target 'LMDropdownViewSwift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
