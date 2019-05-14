@@ -1,5 +1,4 @@
 # LMDropdownViewSwift
-==============
 LMDropdownView is a simple dropdown view inspired by Tappy.
 
 [![CI Status](https://img.shields.io/travis/LMinh/LMDropdownViewSwift.svg?style=flat)](https://travis-ci.org/LMinh/LMDropdownViewSwift)
@@ -8,7 +7,7 @@ LMDropdownView is a simple dropdown view inspired by Tappy.
 [![Platform](https://img.shields.io/cocoapods/p/LMDropdownViewSwift.svg?style=flat)](https://cocoapods.org/pods/LMDropdownViewSwift)
 
 <img src="https://raw.github.com/lminhtm/LMDropdownView/master/Screenshots/screenshot1.png"/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://raw.github.com/lminhtm/LMDropdownView/master/Screenshots/screenshot2.gif"/>
 
 ## Features
