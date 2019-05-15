@@ -1,5 +1,5 @@
 PODS:
-  - LMDropdownViewSwift (0.1.0)
+  - LMDropdownViewSwift (1.0.0)
 
 DEPENDENCIES:
   - LMDropdownViewSwift (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LMDropdownViewSwift: f8a5d8f8185f3722b5d0f47e2fe32851ef92b06f
+  LMDropdownViewSwift: acaa67e396a2a58d85f784f2250e0173e0c0d93f
 
 PODFILE CHECKSUM: 2b560cbc829061cfa0d2eb96e56779e4f13b6082
 
