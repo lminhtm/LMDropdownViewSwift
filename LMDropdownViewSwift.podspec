@@ -18,7 +18,7 @@ LMDropdownViewSwift is a simple dropdown view inspired by Tappy.
   s.screenshots      = 'https://raw.github.com/lminhtm/LMDropdownViewSwift/master/Screenshots/screenshot1.png', 'https://raw.github.com/lminhtm/LMDropdownViewSwift/master/Screenshots/screenshot2.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'LMinh' => 'lminhtm@gmail.com' }
-  s.source           = { :git => 'https://github.com/LMinh/LMDropdownViewSwift.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/lminhtm/LMDropdownViewSwift.git', :tag => s.version.to_s }
   
   s.ios.deployment_target = '8.0'
   s.swift_version = '5.0'
