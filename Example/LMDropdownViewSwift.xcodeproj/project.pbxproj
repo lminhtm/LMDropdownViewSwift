@@ -11,6 +11,7 @@
 		5C34C6A8228C051F0050B849 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C34C6A6228C051F0050B849 /* Accelerate.framework */; };
 		5C34C6A9228C051F0050B849 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C34C6A7228C051F0050B849 /* CoreGraphics.framework */; };
 		5C34C6AB228C05280050B849 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C34C6AA228C05280050B849 /* UIKit.framework */; };
+		5CFBDF80228D63750011CED9 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFBDF7F228D63750011CED9 /* NavigationController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		5C34C6A6228C051F0050B849 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		5C34C6A7228C051F0050B849 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5C34C6AA228C05280050B849 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5CFBDF7F228D63750011CED9 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* LMDropdownViewSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMDropdownViewSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				5CFBDF7F228D63750011CED9 /* NavigationController.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				5C34C69E228BFCE50050B849 /* MenuCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				5CFBDF80228D63750011CED9 /* NavigationController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				5C34C69F228BFCE50050B849 /* MenuCell.swift in Sources */,
 			);

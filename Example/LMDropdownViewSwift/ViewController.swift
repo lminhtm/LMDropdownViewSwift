@@ -155,14 +155,16 @@ extension ViewController: LMDropdownViewDelegate {
     func dropdownViewDidHide(_ dropdownView: LMDropdownView) {
         NSLog("Dropdown view did hide")
 
-        if currentMapTypeIndex == 0 {
-            mapView.mapType = .standard
-        }
-        else if currentMapTypeIndex == 1 {
-            mapView.mapType = .satellite
-        }
-        else {
-            mapView.mapType = .hybrid
+        if dropdownView.direction == .top {
+            if currentMapTypeIndex == 0 {
+                mapView.mapType = .standard
+            }
+            else if currentMapTypeIndex == 1 {
+                mapView.mapType = .satellite
+            }
+            else {
+                mapView.mapType = .hybrid
+            }
         }
     }
 }

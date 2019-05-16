@@ -213,8 +213,10 @@ open class LMDropdownView {
         
         mainView.removeFromSuperview()
     }
-    
-    // MARK: PRIVATE
+}
+
+// MARK: - SETUP
+extension LMDropdownView {
     
     func setup(contentView: UIView, inView containerView: UIView, origin: CGPoint) {
         
