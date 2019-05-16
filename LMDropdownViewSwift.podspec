@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'LMDropdownViewSwift'
   s.version          = '1.0.0'
-  s.summary          = 'LMDropdownView is a simple dropdown view inspired by Tappy.'
+  s.summary          = 'LMDropdownViewSwift is a simple dropdown view inspired by Tappy.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,11 +18,11 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-LMDropdownView is a simple dropdown view inspired by Tappy.
+LMDropdownViewSwift is a simple dropdown view inspired by Tappy.
                        DESC
 
   s.homepage         = 'https://github.com/LMinh/LMDropdownViewSwift'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots      = 'https://raw.github.com/lminhtm/LMDropdownViewSwift/master/Screenshots/screenshot1.png', 'https://raw.github.com/lminhtm/LMDropdownViewSwift/master/Screenshots/screenshot2.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'LMinh' => 'lminhtm@gmail.com' }
   s.source           = { :git => 'https://github.com/LMinh/LMDropdownViewSwift.git', :tag => s.version.to_s }
@@ -30,12 +30,7 @@ LMDropdownView is a simple dropdown view inspired by Tappy.
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'LMDropdownViewSwift/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'LMDropdownViewSwift' => ['LMDropdownViewSwift/Assets/*.png']
-  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
