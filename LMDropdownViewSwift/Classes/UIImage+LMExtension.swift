@@ -15,8 +15,7 @@ public extension UIImage {
     static func screenshot(fromView view: UIView, size: CGSize) -> UIImage? {
         
         UIGraphicsBeginImageContext(size)
-        let aContext = UIGraphicsGetCurrentContext()
-        guard let context = aContext else { return nil }
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
         
         // -renderInContext: renders in the coordinate space of the layer,
         // so we must first apply the layer's geometry to the graphics context
@@ -43,15 +42,15 @@ public extension UIImage {
         return image
     }
     
-    func blurred(withRadius radius: CGFloat) -> UIImage? {
+    func blurred(withRadius radius: CGFloat) -> UIImage {
         
         //image must be nonzero size
         guard floorf(Float(size.width)) * floorf(Float(size.height)) > 0 else { return self }
         
         //boxsize have to be an odd integer
-        var boxsize = UInt32(radius * self.scale)
-        if boxsize % 2 == 0 {
-            boxsize += 1
+        var boxSize = UInt32(radius * self.scale)
+        if boxSize % 2 == 0 {
+            boxSize += 1
         }
         
         //create image buffers
@@ -68,18 +67,16 @@ public extension UIImage {
         buffer1.data = malloc(bytes)
         buffer2.data = malloc(bytes)
         
+        let tempBuffer = malloc(vImageBoxConvolve_ARGB8888(&buffer1, &buffer2, nil, 0, 0, boxSize, boxSize,
+                                                           nil, vImage_Flags(kvImageEdgeExtend + kvImageGetTempBufferSize)))
         
-        let tempBuffer = malloc(
-            MemoryLayout.size(ofValue: vImageBoxConvolve_ARGB8888(&buffer1, &buffer2, nil, 0, 0, boxsize, boxsize,
-                                                                  nil, vImage_Flags(kvImageEdgeExtend + kvImageGetTempBufferSize)))
-        )
         //copy image data
         let dataSource = imageRef.dataProvider?.data
         memcpy(buffer1.data, CFDataGetBytePtr(dataSource), bytes)
         
-        for _ in 0..<10 {
+        for _ in 0..<5 {
             //perform blur
-            vImageBoxConvolve_ARGB8888(&buffer1, &buffer2, tempBuffer, 0, 0, boxsize, boxsize, nil, vImage_Flags(kvImageEdgeExtend));
+            vImageBoxConvolve_ARGB8888(&buffer1, &buffer2, tempBuffer, 0, 0, boxSize, boxSize, nil, vImage_Flags(kvImageEdgeExtend));
             
             //swap buffers
             let temp = buffer1.data
@@ -101,16 +98,13 @@ public extension UIImage {
                                     return self
         }
         
-        //apply tint
-//        if let tintColor = UIColor.clear, tintColor.cgColor.alpha > 0 {
-//            ctx.setFillColor(tintColor.withAlphaComponent(0.25).cgColor)
-//            ctx.setBlendMode(.plusLighter)
-//            ctx.fill(CGRect(origin: .zero, size: CGSize(width: Int(buffer1.width), height: Int(buffer2.height))))
-//        }
-        
         guard let imageRef1 = ctx.makeImage() else {
             return self
         }
-        return UIImage(cgImage: imageRef1, scale: self.scale, orientation: self.imageOrientation)
+        let image = UIImage(cgImage: imageRef1, scale: self.scale, orientation: self.imageOrientation)
+        
+        free(buffer1.data);
+        
+        return image
     }
 }

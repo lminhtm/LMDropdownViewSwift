@@ -31,12 +31,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         dropdownView.delegate = self
-        dropdownView.closedScale = 0.85
-        dropdownView.blurRadius = 5
-        dropdownView.shouldBlurContainerView = true
-        dropdownView.blackMaskAlpha = 0.5
-        dropdownView.animationDuration = 0.5
-        dropdownView.animationBounceHeight = 20
         
         dropPinButton.layer.cornerRadius = 5
         removeAllPinsButton.layer.cornerRadius = 5
@@ -104,7 +98,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         currentMapTypeIndex = indexPath.row
-//        dropdownView.hide()
+        dropdownView.hide()
     }
 }
 

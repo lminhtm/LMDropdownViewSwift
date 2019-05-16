@@ -46,7 +46,7 @@ open class LMDropdownView {
     public var shouldBlurContainerView: Bool = true
     
     /// The blur radius of container view.
-    public var blurRadius: Double = 5
+    public var blurRadius: Double = 5.0
     
     /// The alpha of black mask button.
     public var blackMaskAlpha: Double = 0.5 {
@@ -59,7 +59,7 @@ open class LMDropdownView {
     public var animationDuration: Double = 0.5
     
     /// The animation bounce height of content view.
-    public var animationBounceHeight: Double = 20
+    public var animationBounceHeight: Double = 20.0
     
     /// The animation direction.
     public var direction: LMDropdownViewDirection = .top
@@ -147,7 +147,6 @@ open class LMDropdownView {
         DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
             self.currentState = .didOpen
             self.delegate?.dropdownViewDidShow(self)
-            
             if let handler = self.didShowHandler {
                 handler()
             }
@@ -187,7 +186,7 @@ open class LMDropdownView {
                 handler()
             }
             
-            UIView.animate(withDuration: 0.3, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.mainView.alpha = 0
             }, completion: { (finished) in
                 self.mainView.alpha = 1
@@ -223,10 +222,9 @@ open class LMDropdownView {
         let containerSize = containerView.bounds.size
         let scale = 3 - 2 * closedScale
         let capturedSize = CGSize(width: Double(containerSize.width) * scale, height: Double(containerSize.height) * scale)
-        let capturedImage = UIImage.screenshot(fromView: containerView, size: capturedSize)
-        var containerImage = capturedImage
+        guard var capturedImage = UIImage.screenshot(fromView: containerView, size: capturedSize) else { return }
         if shouldBlurContainerView {
-            containerImage = capturedImage?.blurred(withRadius: CGFloat(blurRadius))
+            capturedImage = capturedImage.blurred(withRadius: CGFloat(blurRadius))
         }
         
         // Main View
@@ -234,7 +232,7 @@ open class LMDropdownView {
         containerView.addSubview(mainView)
         
         // Container Wrapper View
-        containerWrapperView.image = containerImage
+        containerWrapperView.image = capturedImage
         containerWrapperView.bounds = CGRect(x: 0, y: 0, width: capturedSize.width, height: capturedSize.height)
         containerWrapperView.center = mainView.center
         mainView.addSubview(containerWrapperView)
@@ -311,7 +309,7 @@ extension LMDropdownView {
     func addContentAnimation(forState state: LMDropdownViewState) {
         let contentBounceAnim = CAKeyframeAnimation(keyPath: "position")
         contentBounceAnim.duration = animationDuration
-        contentBounceAnim.isRemovedOnCompletion = true
+        contentBounceAnim.isRemovedOnCompletion = false
         contentBounceAnim.fillMode = .forwards
         contentBounceAnim.values = contentPositionValues(forState: state)
         contentBounceAnim.timingFunctions = contentTimingFunctions(forState: state)
@@ -324,7 +322,7 @@ extension LMDropdownView {
     func addContainerAnimation(forState state: LMDropdownViewState) {
         let containerScaleAnim = CAKeyframeAnimation(keyPath: "transform")
         containerScaleAnim.duration = animationDuration
-        containerScaleAnim.isRemovedOnCompletion = true
+        containerScaleAnim.isRemovedOnCompletion = false
         containerScaleAnim.fillMode = .forwards
         containerScaleAnim.values = containerTransformValues(forState: state)
         containerScaleAnim.timingFunctions = containerTimingFunctions(forState: state)
